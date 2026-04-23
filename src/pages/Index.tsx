@@ -218,8 +218,12 @@ const Index = () => {
       {/* NAVIGATION */}
       <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${scrolled ? "bg-[#0F0D0A]/95 backdrop-blur-md border-b border-[#C9A96E]/10" : ""}`}>
         <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-          <button onClick={() => scrollTo("hero")} className="font-display text-2xl text-white tracking-[0.15em]">
-            LUMIÈRE
+          <button onClick={() => scrollTo("hero")} className="flex items-center">
+            <img
+              src="https://cdn.poehali.dev/projects/5016e935-bb63-4aee-a242-8c9dfade0619/bucket/2baf2f46-06e0-42d1-a171-6a7b010e3857.png"
+              alt="Olga Snezhurova Permanent"
+              className="h-14 w-auto object-contain brightness-0 invert"
+            />
           </button>
 
           <div className="hidden md:flex items-center gap-8">
