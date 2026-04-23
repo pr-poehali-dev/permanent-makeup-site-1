@@ -391,7 +391,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
                 {[
                   { icon: "MapPin", label: "Адрес", value: "Череповец, ул. Архангельская, 3" },
                   { icon: "Phone", label: "Телефон", value: "+7 (951) 738-99-90" },
-                  { icon: "Mail", label: "Email", value: "hello@lumiere-studio.ru" },
+                  { icon: "Mail", label: "Email", value: "hello@snezhurova-permanent.ru" },
                   { icon: "Clock", label: "Режим работы", value: "Пн–Сб: 10:00 – 20:00" },
                 ].map(({ icon, label, value }) => (
                   <div key={label} className="flex items-start gap-4">
