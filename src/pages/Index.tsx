@@ -222,7 +222,7 @@ const Index = () => {
             <img
               src="https://cdn.poehali.dev/projects/5016e935-bb63-4aee-a242-8c9dfade0619/bucket/2baf2f46-06e0-42d1-a171-6a7b010e3857.png"
               alt="Olga Snezhurova Permanent"
-              className="h-14 w-auto object-contain brightness-0 invert"
+              className="h-14 w-auto object-contain"
             />
           </button>
 
