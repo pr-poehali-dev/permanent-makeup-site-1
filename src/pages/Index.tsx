@@ -593,6 +593,13 @@ const Index = () => {
                         >
                           {value}
                         </a>
+                      ) : label === "Телефон" ? (
+                        <a
+                          href="tel:+79517389990"
+                          className="font-body text-sm text-white hover:text-[#C9A96E] transition-colors underline underline-offset-4 decoration-[#C9A96E]/30"
+                        >
+                          {value}
+                        </a>
                       ) : (
                         <div className="font-body text-sm text-white">{value}</div>
                       )}
