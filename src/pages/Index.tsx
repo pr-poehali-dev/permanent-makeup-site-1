@@ -574,7 +574,7 @@ const Index = () => {
               <div className="space-y-6">
                 {[
                   { icon: "MapPin", label: "Адрес", value: "Москва, ул. Тверская, 15, офис 304" },
-                  { icon: "Phone", label: "Телефон", value: "+7 (999) 000-00-00" },
+                  { icon: "Phone", label: "Телефон", value: "+7 (951) 738-99-90" },
                   { icon: "Mail", label: "Email", value: "hello@lumiere-studio.ru" },
                   { icon: "Clock", label: "Режим работы", value: "Пн–Сб: 10:00 – 20:00" },
                 ].map(({ icon, label, value }) => (
