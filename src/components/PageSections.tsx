@@ -481,7 +481,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
             <span className="text-[#C9A96E] text-xs tracking-[0.3em]" style={{ fontFamily: "'Great Vibes', cursive" }}>Permanent</span>
           </div>
           <p className="font-body text-xs text-white/25 tracking-widest">
-            © 2024 Olga Snezhurova Permanent. Все права защищены.
+            © 2026 Olga Snezhurova Permanent. Все права защищены.
           </p>
           <div className="flex gap-6">
             {["Политика конфиденциальности", "Договор-оферта"].map(link => (
