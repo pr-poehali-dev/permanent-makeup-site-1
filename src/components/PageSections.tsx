@@ -99,7 +99,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
               <span className="gold-shimmer">которая длится</span>
             </h1>
             <p className="animate-fade-in-up delay-300 font-body text-white/50 text-base leading-relaxed max-w-md mt-6 mb-10">
-              Перманентный макияж бровей, губ и век в Москве. Премиальные пигменты, европейские техники, безопасность — прежде всего.
+              Перманентный макияж бровей, губ и век в Череповце. Премиальные пигменты, европейские техники, безопасность — прежде всего.
             </p>
             <div className="animate-fade-in-up delay-400 flex flex-wrap gap-4">
               <button
