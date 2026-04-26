@@ -270,7 +270,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
             {[
               { img: PROCEDURE_IMAGE, tag: "Брови · Пудровые", tall: true },
-              { img: PORTRAIT_IMAGE, tag: "Губы · Омбре", tall: false },
+              { img: "https://cdn.poehali.dev/projects/5016e935-bb63-4aee-a242-8c9dfade0619/bucket/09ca4ecb-51ea-4d6c-9c07-673f3b150084.jpeg", tag: "Губы · Омбре", tall: false },
               { img: HERO_IMAGE, tag: "Студия", tall: false },
             ].map((item, i) => (
               <div key={i} className={`relative overflow-hidden group ${item.tall ? "row-span-2" : ""}`}>
