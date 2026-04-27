@@ -416,6 +416,13 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
                         >
                           {value}
                         </a>
+                      ) : label === "Email" ? (
+                        <a
+                          href="mailto:snezhurova.olga@yandex.ru"
+                          className="font-body text-sm text-white hover:text-[#C9A96E] transition-colors underline underline-offset-4 decoration-[#C9A96E]/30"
+                        >
+                          {value}
+                        </a>
                       ) : (
                         <div className="font-body text-sm text-white">{value}</div>
                       )}
