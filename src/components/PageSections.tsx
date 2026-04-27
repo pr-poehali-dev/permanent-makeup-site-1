@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
+const SEND_EMAIL_URL = "https://functions.poehali.dev/a2cb5c37-1b35-4553-ae8d-d025b6e51418";
+
 const HERO_IMAGE = "https://cdn.poehali.dev/projects/5016e935-bb63-4aee-a242-8c9dfade0619/files/1ca10198-a465-49be-94f5-c8b14173b6cd.jpg";
 const PROCEDURE_IMAGE = "https://cdn.poehali.dev/projects/5016e935-bb63-4aee-a242-8c9dfade0619/files/4857ded8-dbfe-4320-8234-9a88547ad752.jpg";
 const PORTRAIT_IMAGE = "https://cdn.poehali.dev/projects/5016e935-bb63-4aee-a242-8c9dfade0619/bucket/5bdbc9a6-d24b-4be8-9d2c-9d297117fd0b.jpeg";
@@ -70,6 +72,93 @@ const faqItems = [
   { q: "Есть ли противопоказания?", a: "Да: беременность, кормление грудью, онкология, диабет, склонность к келоидным рубцам. Полный список — на консультации." },
   { q: "Когда виден окончательный результат?", a: "Через 4–6 недель после заживления. Первые дни пигмент выглядит ярче — это нормально." },
 ];
+
+function ContactForm() {
+  const [name, setName] = useState('');
+  const [contact, setContact] = useState('');
+  const [message, setMessage] = useState('');
+  const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setStatus('loading');
+    try {
+      const res = await fetch(SEND_EMAIL_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, contact, message }),
+      });
+      if (res.ok) {
+        setStatus('success');
+        setName(''); setContact(''); setMessage('');
+      } else {
+        setStatus('error');
+      }
+    } catch {
+      setStatus('error');
+    }
+  };
+
+  return (
+    <div className="bg-[#1A1714] border border-[#C9A96E]/10 p-8">
+      <h3 className="font-display text-3xl text-white mb-6">Задайте вопрос</h3>
+      {status === 'success' ? (
+        <div className="text-center py-8">
+          <p className="font-body text-[#C9A96E] text-sm tracking-widest uppercase mb-2">Сообщение отправлено</p>
+          <p className="font-body text-white/50 text-sm">Я свяжусь с вами в ближайшее время</p>
+          <button onClick={() => setStatus('idle')} className="mt-6 font-body text-xs text-[#C9A96E]/60 underline underline-offset-4">
+            Отправить ещё
+          </button>
+        </div>
+      ) : (
+        <form onSubmit={handleSubmit} className="space-y-4">
+          <div>
+            <label className="block text-xs font-body text-[#C9A96E]/60 tracking-widest uppercase mb-1">Имя</label>
+            <input
+              type="text"
+              value={name}
+              onChange={e => setName(e.target.value)}
+              required
+              className="w-full bg-[#0F0D0A] border border-[#C9A96E]/15 text-white px-4 py-3 text-sm font-body focus:outline-none focus:border-[#C9A96E]/40 transition-colors placeholder:text-white/20"
+              placeholder="Ваше имя"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-body text-[#C9A96E]/60 tracking-widest uppercase mb-1">Телефон или Email</label>
+            <input
+              type="text"
+              value={contact}
+              onChange={e => setContact(e.target.value)}
+              required
+              className="w-full bg-[#0F0D0A] border border-[#C9A96E]/15 text-white px-4 py-3 text-sm font-body focus:outline-none focus:border-[#C9A96E]/40 transition-colors placeholder:text-white/20"
+              placeholder="+7 (999) 000-00-00"
+            />
+          </div>
+          <div>
+            <label className="block text-xs font-body text-[#C9A96E]/60 tracking-widest uppercase mb-1">Сообщение</label>
+            <textarea
+              rows={4}
+              value={message}
+              onChange={e => setMessage(e.target.value)}
+              className="w-full bg-[#0F0D0A] border border-[#C9A96E]/15 text-white px-4 py-3 text-sm font-body focus:outline-none focus:border-[#C9A96E]/40 transition-colors resize-none placeholder:text-white/20"
+              placeholder="Ваш вопрос..."
+            />
+          </div>
+          {status === 'error' && (
+            <p className="font-body text-red-400 text-xs">Ошибка отправки. Попробуйте ещё раз.</p>
+          )}
+          <button
+            type="submit"
+            disabled={status === 'loading'}
+            className="w-full bg-[#C9A96E] text-[#0F0D0A] py-4 text-xs font-body font-semibold tracking-[0.25em] uppercase hover:bg-[#E8C98A] transition-colors disabled:opacity-60"
+          >
+            {status === 'loading' ? 'Отправка...' : 'Отправить'}
+          </button>
+        </form>
+      )}
+    </div>
+  );
+}
 
 interface PageSectionsProps {
   scrollTo: (id: string) => void;
@@ -444,38 +533,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
               </div>
             </div>
 
-            <div className="bg-[#1A1714] border border-[#C9A96E]/10 p-8">
-              <h3 className="font-display text-3xl text-white mb-6">Задайте вопрос</h3>
-              <div className="space-y-4">
-                <div>
-                  <label className="block text-xs font-body text-[#C9A96E]/60 tracking-widest uppercase mb-1">Имя</label>
-                  <input
-                    type="text"
-                    className="w-full bg-[#0F0D0A] border border-[#C9A96E]/15 text-white px-4 py-3 text-sm font-body focus:outline-none focus:border-[#C9A96E]/40 transition-colors placeholder:text-white/20"
-                    placeholder="Ваше имя"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-body text-[#C9A96E]/60 tracking-widest uppercase mb-1">Телефон или Email</label>
-                  <input
-                    type="text"
-                    className="w-full bg-[#0F0D0A] border border-[#C9A96E]/15 text-white px-4 py-3 text-sm font-body focus:outline-none focus:border-[#C9A96E]/40 transition-colors placeholder:text-white/20"
-                    placeholder="+7 (999) 000-00-00"
-                  />
-                </div>
-                <div>
-                  <label className="block text-xs font-body text-[#C9A96E]/60 tracking-widest uppercase mb-1">Сообщение</label>
-                  <textarea
-                    rows={4}
-                    className="w-full bg-[#0F0D0A] border border-[#C9A96E]/15 text-white px-4 py-3 text-sm font-body focus:outline-none focus:border-[#C9A96E]/40 transition-colors resize-none placeholder:text-white/20"
-                    placeholder="Ваш вопрос..."
-                  />
-                </div>
-                <button className="w-full bg-[#C9A96E] text-[#0F0D0A] py-4 text-xs font-body font-semibold tracking-[0.25em] uppercase hover:bg-[#E8C98A] transition-colors">
-                  Отправить
-                </button>
-              </div>
-            </div>
+            <ContactForm />
           </div>
         </div>
       </section>
