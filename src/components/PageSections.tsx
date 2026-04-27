@@ -83,18 +83,23 @@ function ContactForm() {
     e.preventDefault();
     setStatus('loading');
     try {
+      console.log('Отправляю запрос на:', SEND_EMAIL_URL);
       const res = await fetch(SEND_EMAIL_URL, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ name, contact, message }),
       });
+      console.log('Ответ:', res.status, res.ok);
+      const data = await res.json();
+      console.log('Данные:', data);
       if (res.ok) {
         setStatus('success');
         setName(''); setContact(''); setMessage('');
       } else {
         setStatus('error');
       }
-    } catch {
+    } catch (err) {
+      console.error('Ошибка fetch:', err);
       setStatus('error');
     }
   };
