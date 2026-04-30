@@ -535,6 +535,15 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
                     <Icon name={icon} size={16} />
                   </button>
                 ))}
+                <a
+                  href="https://vk.ru/o.snezhurova"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 border border-[#C9A96E]/20 flex items-center justify-center text-[#C9A96E]/50 hover:text-[#C9A96E] hover:border-[#C9A96E]/50 transition-colors"
+                  title="ВКонтакте"
+                >
+                  <Icon name="Users" size={16} />
+                </a>
               </div>
             </div>
 
