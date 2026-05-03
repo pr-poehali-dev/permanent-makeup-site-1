@@ -536,6 +536,15 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
                   </button>
                 ))}
                 <a
+                  href="https://max.ru/u/f9LHodD0cOJvIjmSd3TFuyugzyT2yt3297dhH0H7P-u3EW2jQoo-FWNUHIA"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-10 h-10 border border-[#C9A96E]/20 flex items-center justify-center text-[#C9A96E]/50 hover:text-[#C9A96E] hover:border-[#C9A96E]/50 transition-colors"
+                  title="Макс"
+                >
+                  <Icon name="MessageSquare" size={16} />
+                </a>
+                <a
                   href="https://vk.com/im?sel=o.snezhurova"
                   target="_blank"
                   rel="noopener noreferrer"
