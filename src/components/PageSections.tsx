@@ -280,6 +280,8 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
                 src={PORTRAIT_IMAGE}
                 alt="Мастер"
                 className="w-full aspect-[3/4] object-cover"
+                loading="lazy"
+                decoding="async"
               />
               <div className="absolute -bottom-6 -right-6 bg-[#C9A96E] text-[#0F0D0A] p-6 hidden md:block">
                 <div className="font-display text-4xl font-light">7</div>
@@ -392,6 +394,8 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
                   alt={item.tag}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
                   style={{ minHeight: item.tall ? "420px" : "200px" }}
+                  loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#0F0D0A]/80 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-full group-hover:translate-y-0 transition-transform duration-300">
