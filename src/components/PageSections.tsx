@@ -596,7 +596,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
               © 2026 Olga Snezhurova Permanent. Все права защищены.
             </p>
             <p className="font-body text-xs text-white/20 tracking-widest">
-              ИП Снежурова О.Е. · ИНН 350501152452
+              ИНН 350501152452
             </p>
           </div>
           <div className="flex items-center gap-6">
