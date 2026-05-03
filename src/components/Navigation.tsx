@@ -1,11 +1,21 @@
 import Icon from "@/components/ui/icon";
 
+declare global {
+  interface Window { ym?: (...args: unknown[]) => void; }
+}
+
 interface NavigationProps {
   scrolled: boolean;
   menuOpen: boolean;
   setMenuOpen: (v: boolean) => void;
   scrollTo: (id: string) => void;
   onBookingOpen: () => void;
+}
+
+function trackBookingOpen() {
+  if (typeof window !== "undefined" && window.ym) {
+    window.ym(109022974, 'reachGoal', 'booking_open');
+  }
 }
 
 export function Navigation({ scrolled, menuOpen, setMenuOpen, scrollTo, onBookingOpen }: NavigationProps) {
@@ -31,7 +41,7 @@ export function Navigation({ scrolled, menuOpen, setMenuOpen, scrollTo, onBookin
 
         <div className="flex items-center gap-4">
           <button
-            onClick={onBookingOpen}
+            onClick={() => { trackBookingOpen(); onBookingOpen(); }}
             className="hidden md:block bg-[#C9A96E] text-[#0F0D0A] px-6 py-2.5 text-xs font-body font-semibold tracking-[0.2em] uppercase hover:bg-[#E8C98A] transition-colors"
           >
             Записаться
@@ -54,7 +64,7 @@ export function Navigation({ scrolled, menuOpen, setMenuOpen, scrollTo, onBookin
             </button>
           ))}
           <button
-            onClick={() => { onBookingOpen(); setMenuOpen(false); }}
+            onClick={() => { trackBookingOpen(); onBookingOpen(); setMenuOpen(false); }}
             className="w-full bg-[#C9A96E] text-[#0F0D0A] py-3 text-xs font-body font-semibold tracking-widest uppercase mt-2"
           >
             Записаться

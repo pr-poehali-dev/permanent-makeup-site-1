@@ -32,6 +32,9 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
       if (res.ok) {
         setSubmitted(true);
         setStatus("idle");
+        if (typeof window !== "undefined" && (window as { ym?: (...args: unknown[]) => void }).ym) {
+          (window as { ym?: (...args: unknown[]) => void }).ym!(109022974, 'reachGoal', 'booking_submit');
+        }
       } else {
         setStatus("error");
       }
