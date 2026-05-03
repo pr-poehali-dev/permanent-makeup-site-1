@@ -189,7 +189,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
             <p className="animate-fade-in-up delay-100 text-[#C9A96E] font-body text-xs tracking-[0.4em] uppercase mb-6">
               Студия перманентного макияжа
             </p>
-            <h1 className="animate-fade-in-up delay-200 font-display text-6xl md:text-8xl text-white leading-[0.9] mb-4">
+            <h1 className="animate-fade-in-up delay-200 font-display text-4xl sm:text-5xl md:text-6xl lg:text-8xl text-white leading-[0.9] mb-4">
               Красота,<br />
               <span className="gold-shimmer">которая длится</span>
             </h1>
@@ -199,7 +199,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
             <div className="animate-fade-in-up delay-400 flex flex-wrap gap-4">
               <button
                 onClick={onBookingOpen}
-                className="bg-[#C9A96E] text-[#0F0D0A] px-10 py-4 text-xs font-body font-semibold tracking-[0.25em] uppercase hover:bg-[#E8C98A] transition-colors"
+                className="bg-[#C9A96E] text-[#0F0D0A] px-6 sm:px-10 py-4 text-xs font-body font-semibold tracking-[0.25em] uppercase hover:bg-[#E8C98A] transition-colors"
               >
                 Записаться на процедуру
               </button>
@@ -211,7 +211,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
               </button>
             </div>
 
-            <div className="animate-fade-in-up delay-600 flex gap-10 mt-14">
+            <div className="animate-fade-in-up delay-600 flex flex-wrap gap-6 sm:gap-10 mt-14">
               {[["500+", "Довольных клиентов"], ["7", "Лет опыта"], ["100%", "Безопасность"]].map(([num, label]) => (
                 <div key={label}>
                   <div className="font-display text-3xl text-[#C9A96E] font-light">{num}</div>
@@ -236,7 +236,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
             <div>
               <p className="text-[#C9A96E] font-body text-xs tracking-[0.4em] uppercase mb-3">Прайс-лист</p>
-              <h2 className="font-display text-5xl md:text-6xl text-white">Наши услуги</h2>
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white">Наши услуги</h2>
             </div>
             <p className="font-body text-white/40 text-sm leading-relaxed max-w-xs">
               В стоимость включена бесплатная коррекция через 4–6 недель
@@ -247,7 +247,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
             {services.map((s) => (
               <div
                 key={s.title}
-                className="bg-[#0F0D0A] p-8 group hover:bg-[#1A1714] transition-colors"
+                className="bg-[#0F0D0A] p-5 sm:p-8 group hover:bg-[#1A1714] transition-colors"
               >
                 <div className="w-10 h-10 border border-[#C9A96E]/30 flex items-center justify-center mb-6 group-hover:border-[#C9A96E]/60 transition-colors">
                   <Icon name={s.icon} size={18} className="text-[#C9A96E]" />
@@ -291,7 +291,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
 
             <div>
               <p className="text-[#C9A96E] font-body text-xs tracking-[0.4em] uppercase mb-4">О мастере</p>
-              <h2 className="font-display text-5xl md:text-6xl text-white mb-8">
+              <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-8">
                 Красота — это<br />искусство
               </h2>
               <p className="font-body text-white/50 text-sm leading-relaxed mb-4">
@@ -441,7 +441,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
         <div className="max-w-4xl mx-auto px-6">
           <div className="text-center mb-16">
             <p className="text-[#C9A96E] font-body text-xs tracking-[0.4em] uppercase mb-3">Вопросы</p>
-            <h2 className="font-display text-5xl md:text-6xl text-white">Частые вопросы</h2>
+            <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white">Частые вопросы</h2>
           </div>
 
           <div className="space-y-0 divide-y divide-[#C9A96E]/10">
@@ -480,7 +480,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
         </div>
         <div className="relative max-w-3xl mx-auto px-6 text-center">
           <p className="text-[#C9A96E] font-body text-xs tracking-[0.4em] uppercase mb-4">Начните сейчас</p>
-          <h2 className="font-display text-5xl md:text-7xl text-white mb-6">
+          <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-7xl text-white mb-6">
             Запишитесь<br />
             <span className="gold-text-gradient">на консультацию</span>
           </h2>
@@ -489,7 +489,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
           </p>
           <button
             onClick={onBookingOpen}
-            className="bg-[#C9A96E] text-[#0F0D0A] px-14 py-5 text-xs font-body font-semibold tracking-[0.3em] uppercase hover:bg-[#E8C98A] transition-colors"
+            className="bg-[#C9A96E] text-[#0F0D0A] px-8 sm:px-14 py-4 sm:py-5 text-xs font-body font-semibold tracking-[0.3em] uppercase hover:bg-[#E8C98A] transition-colors"
           >
             Записаться бесплатно
           </button>

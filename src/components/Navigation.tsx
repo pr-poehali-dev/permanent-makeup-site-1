@@ -36,8 +36,8 @@ export function Navigation({ scrolled, menuOpen, setMenuOpen, scrollTo, onBookin
           >
             Записаться
           </button>
-          <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-white/60 hover:text-[#C9A96E]">
-            <Icon name={menuOpen ? "X" : "Menu"} size={22} />
+          <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden text-white/60 hover:text-[#C9A96E] p-2 -mr-2">
+            <Icon name={menuOpen ? "X" : "Menu"} size={24} />
           </button>
         </div>
       </div>
@@ -48,7 +48,7 @@ export function Navigation({ scrolled, menuOpen, setMenuOpen, scrollTo, onBookin
             <button
               key={id}
               onClick={() => scrollTo(id)}
-              className="block text-sm font-body text-white/60 tracking-widest uppercase hover:text-[#C9A96E] transition-colors"
+              className="block text-base font-body text-white/60 tracking-widest uppercase hover:text-[#C9A96E] transition-colors py-1"
             >
               {label}
             </button>

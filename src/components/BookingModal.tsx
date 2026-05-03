@@ -44,7 +44,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4" onClick={onClose}>
       <div className="absolute inset-0 bg-black/80 backdrop-blur-sm" />
       <div
-        className="relative w-full max-w-lg bg-[#1A1714] border border-[#C9A96E]/30 p-8 animate-fade-in-up"
+        className="relative w-full max-w-lg bg-[#1A1714] border border-[#C9A96E]/30 p-4 sm:p-8 animate-fade-in-up max-h-[90vh] overflow-y-auto"
         onClick={(e) => e.stopPropagation()}
       >
         <button
@@ -58,7 +58,7 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
           <>
             <div className="mb-6">
               <p className="text-[#C9A96E] font-body text-xs tracking-[0.3em] uppercase mb-2">Онлайн-запись</p>
-              <h3 className="font-display text-3xl text-white">Записаться на процедуру</h3>
+              <h3 className="font-display text-2xl sm:text-3xl text-white">Записаться на процедуру</h3>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-4">
