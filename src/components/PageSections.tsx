@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 import Icon from "@/components/ui/icon";
 
 const SEND_EMAIL_URL = "https://functions.poehali.dev/a2cb5c37-1b35-4553-ae8d-d025b6e51418";
@@ -590,11 +591,9 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
             © 2026 Olga Snezhurova Permanent. Все права защищены.
           </p>
           <div className="flex gap-6">
-            {["Политика конфиденциальности", "Договор-оферта"].map(link => (
-              <button key={link} className="font-body text-xs text-white/25 hover:text-[#C9A96E]/60 transition-colors">
-                {link}
-              </button>
-            ))}
+            <Link to="/privacy" className="font-body text-xs text-white/25 hover:text-[#C9A96E]/60 transition-colors">
+              Политика конфиденциальности
+            </Link>
           </div>
         </div>
       </footer>
