@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Icon from "@/components/ui/icon";
 
+const SEND_EMAIL_URL = "https://functions.poehali.dev/a2cb5c37-1b35-4553-ae8d-d025b6e51418";
+
 interface BookingModalProps {
   isOpen: boolean;
   onClose: () => void;
@@ -9,12 +11,33 @@ interface BookingModalProps {
 export function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const [form, setForm] = useState({ name: "", phone: "", service: "", date: "", comment: "" });
   const [submitted, setSubmitted] = useState(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
 
   if (!isOpen) return null;
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
+    setStatus("loading");
+    try {
+      const message = [
+        form.service && `Процедура: ${form.service}`,
+        form.date && `Дата: ${form.date}`,
+        form.comment && `Комментарий: ${form.comment}`,
+      ].filter(Boolean).join("\n");
+      const res = await fetch(SEND_EMAIL_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name: form.name, contact: form.phone, message }),
+      });
+      if (res.ok) {
+        setSubmitted(true);
+        setStatus("idle");
+      } else {
+        setStatus("error");
+      }
+    } catch {
+      setStatus("error");
+    }
   };
 
   return (
@@ -99,11 +122,15 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 />
               </div>
 
+              {status === "error" && (
+                <p className="text-red-400 text-xs font-body text-center">Ошибка отправки. Попробуйте ещё раз.</p>
+              )}
               <button
                 type="submit"
-                className="w-full bg-[#C9A96E] text-[#0F0D0A] py-4 text-xs font-body font-semibold tracking-[0.25em] uppercase hover:bg-[#E8C98A] transition-colors mt-2"
+                disabled={status === "loading"}
+                className="w-full bg-[#C9A96E] text-[#0F0D0A] py-4 text-xs font-body font-semibold tracking-[0.25em] uppercase hover:bg-[#E8C98A] transition-colors mt-2 disabled:opacity-60"
               >
-                Отправить заявку
+                {status === "loading" ? "Отправка..." : "Отправить заявку"}
               </button>
             </form>
           </>
