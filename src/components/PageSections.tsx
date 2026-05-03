@@ -591,9 +591,14 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
             <span className="font-display text-xl text-white tracking-[0.15em]">Olga Snezhurova</span>
             <span className="text-[#C9A96E] text-xs tracking-[0.3em]" style={{ fontFamily: "'Great Vibes', cursive" }}>Permanent</span>
           </div>
-          <p className="font-body text-xs text-white/25 tracking-widest">
-            © 2026 Olga Snezhurova Permanent. Все права защищены.
-          </p>
+          <div className="flex flex-col items-center gap-1">
+            <p className="font-body text-xs text-white/25 tracking-widest">
+              © 2026 Olga Snezhurova Permanent. Все права защищены.
+            </p>
+            <p className="font-body text-xs text-white/20 tracking-widest">
+              ИП Снежурова О.Е. · ИНН 350501152452
+            </p>
+          </div>
           <div className="flex items-center gap-6">
             <Link to="/privacy" className="font-body text-xs text-white/25 hover:text-[#C9A96E]/60 transition-colors">
               Политика конфиденциальности
