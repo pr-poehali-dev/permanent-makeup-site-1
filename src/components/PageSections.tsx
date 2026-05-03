@@ -291,12 +291,30 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
               <h2 className="font-display text-5xl md:text-6xl text-white mb-8">
                 Красота — это<br />искусство
               </h2>
-              <p className="font-body text-white/50 text-sm leading-relaxed mb-6">
-                Меня зовут Юлия. Я мастер перманентного макияжа с 7-летним опытом. Прошла обучение в России и Европе, сертифицирована по международным стандартам.
+              <p className="font-body text-white/50 text-sm leading-relaxed mb-4">
+                Абсолютный чемпион и судья, живу в Череповце и вхожу в судейский корпус, обладая одним из самых впечатляющих и разносторонних портфолио. Моя карьера — это череда высших достижений, непрерывного обучения и уже состоявшегося авторитета в судействе.
               </p>
-              <p className="font-body text-white/50 text-sm leading-relaxed mb-10">
-                Моя цель — не просто сделать красиво, а создать результат, который органично впишется в ваш образ и сохранится надолго.
-              </p>
+              <div className="font-body text-white/50 text-sm leading-relaxed mb-4 space-y-1">
+                <p className="text-[#C9A96E]/80 font-semibold uppercase tracking-widest text-xs mb-2">Высшее признание</p>
+                <p>• 2024: ТОП-100 мастеров России на IP AWARDS (номинация «BROW ARTIST»)</p>
+                <p>• 2025: ТОП-100 на IP AWARDS (номинация «LIPS ARTIST»)</p>
+                <p>• 2025: ТОП-100 мастеров России на премии Pink Pro (Ярославль)</p>
+              </div>
+              <div className="font-body text-white/50 text-sm leading-relaxed mb-4 space-y-1">
+                <p className="text-[#C9A96E]/80 font-semibold uppercase tracking-widest text-xs mb-2">Победы на чемпионатах</p>
+                <p>• ГРАН-ПРИ и абсолютная победа на StepUp Awards 2024</p>
+                <p>• 4 призовых места на StepUp Awards 2024: 1 место (Мини-тату), 2 место (Брови), 3 место (Веки), 3 место (Губы)</p>
+                <p>• Серебряный призёр Pink Pro 2023 в двух номинациях по бровям</p>
+                <p>• 2025: 1 место (Стрелка), 3 место (Эксперт)</p>
+                <p>• Участник Чемпионата Мира по ПМ INTER 5.0 2023</p>
+              </div>
+              <div className="font-body text-white/50 text-sm leading-relaxed mb-10 space-y-1">
+                <p className="text-[#C9A96E]/80 font-semibold uppercase tracking-widest text-xs mb-2">Судейский статус</p>
+                <p>• Судья чемпионата Pink Pro 2024</p>
+                <p>• Судья онлайн-чемпионата Beauty Battle 2024</p>
+                <p>• Гранд-судья чемпионата «Звездный Стиль» 2026</p>
+                <p>• Амбассадор компании InterPigments в г. Череповец</p>
+              </div>
 
               <div className="grid grid-cols-2 gap-6 mb-10">
                 {[
