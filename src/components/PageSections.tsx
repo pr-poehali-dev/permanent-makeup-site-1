@@ -590,10 +590,24 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
           <p className="font-body text-xs text-white/25 tracking-widest">
             © 2026 Olga Snezhurova Permanent. Все права защищены.
           </p>
-          <div className="flex gap-6">
+          <div className="flex items-center gap-6">
             <Link to="/privacy" className="font-body text-xs text-white/25 hover:text-[#C9A96E]/60 transition-colors">
               Политика конфиденциальности
             </Link>
+            <button
+              onClick={() => {
+                if (navigator.share) {
+                  navigator.share({ title: "Olga Snezhurova Permanent", url: window.location.href });
+                } else {
+                  navigator.clipboard.writeText(window.location.href);
+                }
+              }}
+              className="flex items-center gap-2 font-body text-xs text-white/25 hover:text-[#C9A96E]/60 transition-colors"
+              title="Поделиться"
+            >
+              <Icon name="Share2" size={13} />
+              Поделиться
+            </button>
           </div>
         </div>
       </footer>
