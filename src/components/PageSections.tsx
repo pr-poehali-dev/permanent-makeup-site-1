@@ -250,8 +250,42 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-[#C9A96E]/10">
-            {services.map((s) => (
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[#C9A96E]/10 mb-px">
+            {services.slice(0, 3).map((s) => (
+              <div
+                key={s.title}
+                className="bg-[#0F0D0A] p-5 sm:p-8 group hover:bg-[#1A1714] transition-colors"
+              >
+                <div className="w-10 h-10 border border-[#C9A96E]/30 flex items-center justify-center mb-6 group-hover:border-[#C9A96E]/60 transition-colors">
+                  <Icon name={s.icon} size={18} className="text-[#C9A96E]" />
+                </div>
+                <p className="text-[#C9A96E]/60 font-body text-xs tracking-widest uppercase mb-1">{s.subtitle}</p>
+                <h3 className="font-display text-3xl text-white mb-4">{s.title}</h3>
+                <ul className="space-y-2 mb-6">
+                  {s.items.map(item => (
+                    <li key={item} className="font-body text-sm text-white/40 flex items-center gap-2">
+                      <span className="w-1 h-1 bg-[#C9A96E]/40 rounded-full flex-shrink-0" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+                <div className="pt-4 border-t border-[#C9A96E]/10">
+                  {Array.isArray(s.price) ? (
+                    <div className="flex flex-col gap-1">
+                      {s.price.map(line => (
+                        <span key={line} className="font-display text-lg text-[#C9A96E] leading-snug">{line}</span>
+                      ))}
+                    </div>
+                  ) : (
+                    <span className="font-display text-2xl text-[#C9A96E]">{s.price}</span>
+                  )}
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-px bg-[#C9A96E]/10">
+            {services.slice(3).map((s) => (
               <div
                 key={s.title}
                 className="bg-[#0F0D0A] p-5 sm:p-8 group hover:bg-[#1A1714] transition-colors"
