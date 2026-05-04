@@ -34,7 +34,7 @@ const services = [
     title: "Трихопигментация",
     subtitle: "SMP / Scalp Micro Pigmentation",
     items: ["Визуальное восстановление густоты волос", "Залысины", "Шрамы", "Дефекты кожи"],
-    price: "Мужчины — от 10 000 ₽ / Женщины — от 12 000 ₽",
+    price: ["Мужчины — от 10 000 ₽", "Женщины — от 12 000 ₽"],
     icon: "Sparkles",
   },
   {
@@ -270,7 +270,15 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
                   ))}
                 </ul>
                 <div className="pt-4 border-t border-[#C9A96E]/10">
-                  <span className={`font-display text-[#C9A96E] ${s.price.length > 20 ? 'text-sm leading-snug' : 'text-2xl'}`}>{s.price}</span>
+                  {Array.isArray(s.price) ? (
+                    <div className="flex flex-col gap-1">
+                      {s.price.map(line => (
+                        <span key={line} className="font-display text-sm text-[#C9A96E] leading-snug">{line}</span>
+                      ))}
+                    </div>
+                  ) : (
+                    <span className="font-display text-2xl text-[#C9A96E]">{s.price}</span>
+                  )}
                 </div>
               </div>
             ))}
