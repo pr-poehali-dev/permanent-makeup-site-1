@@ -273,7 +273,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
                   {Array.isArray(s.price) ? (
                     <div className="flex flex-col gap-1">
                       {s.price.map(line => (
-                        <span key={line} className="font-display text-sm text-[#C9A96E] leading-snug">{line}</span>
+                        <span key={line} className="font-display text-lg text-[#C9A96E] leading-snug">{line}</span>
                       ))}
                     </div>
                   ) : (
