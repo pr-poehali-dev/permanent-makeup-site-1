@@ -250,7 +250,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-px bg-[#C9A96E]/10">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-px bg-[#C9A96E]/10">
             {services.map((s) => (
               <div
                 key={s.title}
@@ -270,7 +270,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
                   ))}
                 </ul>
                 <div className="pt-4 border-t border-[#C9A96E]/10">
-                  <span className="font-display text-2xl text-[#C9A96E]">{s.price}</span>
+                  <span className={`font-display text-[#C9A96E] ${s.price.length > 20 ? 'text-sm leading-snug' : 'text-2xl'}`}>{s.price}</span>
                 </div>
               </div>
             ))}
