@@ -34,7 +34,7 @@ const services = [
     title: "Трихопигментация",
     subtitle: "SMP / Scalp Micro Pigmentation",
     items: ["Визуальное восстановление густоты волос", "Залысины", "Шрамы", "Дефекты кожи"],
-    price: ["Муж. от 10 000 ₽", "Жен. от 12 000 ₽"],
+    price: "Мужчины — от 10 000 ₽ / Женщины — от 12 000 ₽",
     icon: "Sparkles",
   },
   {
@@ -277,7 +277,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
                       ))}
                     </div>
                   ) : (
-                    <span className="font-display text-2xl text-[#C9A96E]">{s.price}</span>
+                    <span className={`font-display text-[#C9A96E] ${s.price.length > 20 ? 'text-base leading-snug' : 'text-2xl'}`}>{s.price}</span>
                   )}
                 </div>
               </div>
@@ -311,7 +311,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
                       ))}
                     </div>
                   ) : (
-                    <span className="font-display text-2xl text-[#C9A96E]">{s.price}</span>
+                    <span className={`font-display text-[#C9A96E] ${s.price.length > 20 ? 'text-base leading-snug' : 'text-2xl'}`}>{s.price}</span>
                   )}
                 </div>
               </div>
