@@ -598,15 +598,6 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
               </div>
 
               <div className="flex gap-3 mt-10">
-                {[{ icon: "Instagram", label: "Instagram" }, { icon: "MessageCircle", label: "Telegram" }, { icon: "Phone", label: "WhatsApp" }].map(({ icon, label }) => (
-                  <button
-                    key={label}
-                    className="w-10 h-10 border border-[#C9A96E]/20 flex items-center justify-center text-[#C9A96E]/50 hover:text-[#C9A96E] hover:border-[#C9A96E]/50 transition-colors"
-                    title={label}
-                  >
-                    <Icon name={icon} size={16} />
-                  </button>
-                ))}
                 <a
                   href="https://max.ru/u/f9LHodD0cOJvIjmSd3TFuyugzyT2yt3297dhH0H7P-u3EW2jQoo-FWNUHIA"
                   target="_blank"
