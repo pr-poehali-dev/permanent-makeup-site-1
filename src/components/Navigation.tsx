@@ -1,4 +1,5 @@
 import Icon from "@/components/ui/icon";
+import { Logo } from "@/components/Logo";
 
 declare global {
   interface Window { ym?: (...args: unknown[]) => void; }
@@ -22,9 +23,12 @@ export function Navigation({ scrolled, menuOpen, setMenuOpen, scrollTo, onBookin
   return (
     <nav className={`fixed top-0 left-0 right-0 z-40 transition-all duration-500 ${scrolled ? "bg-[#0F0D0A]/95 backdrop-blur-md border-b border-[#C9A96E]/10" : ""}`}>
       <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-        <button onClick={() => scrollTo("hero")} className="flex flex-col items-start leading-none">
-          <span className="font-display text-2xl text-white tracking-[0.15em]">Olga Snezhurova</span>
-          <span className="font-body text-[#C9A96E] text-xs tracking-[0.4em] uppercase mt-0.5" style={{ fontFamily: "'Great Vibes', cursive" }}>Permanent</span>
+        <button onClick={() => scrollTo("hero")} className="flex items-center gap-3 leading-none">
+          <Logo className="w-9 h-9 text-[#C9A96E] flex-shrink-0" />
+          <span className="flex flex-col items-start">
+            <span className="font-display text-2xl text-white tracking-[0.15em]">Olga Snezhurova</span>
+            <span className="font-body text-[#C9A96E] text-xs tracking-[0.4em] uppercase mt-0.5" style={{ fontFamily: "'Great Vibes', cursive" }}>Permanent</span>
+          </span>
         </button>
 
         <div className="hidden md:flex items-center gap-8">
