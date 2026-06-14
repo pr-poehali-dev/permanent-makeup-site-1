@@ -642,6 +642,14 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
             <p className="font-body text-xs text-white/20 tracking-widest">
               ИНН 350501152452
             </p>
+            <a
+              href="https://landingguru.ru"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-body text-xs text-white/20 hover:text-[#C9A96E]/60 transition-colors tracking-widest"
+            >
+              Сайт разработан landingguru.ru
+            </a>
           </div>
           <div className="flex items-center gap-6">
             <Link to="/privacy" className="font-body text-xs text-white/25 hover:text-[#C9A96E]/60 transition-colors">
