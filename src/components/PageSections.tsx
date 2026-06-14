@@ -250,9 +250,6 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
               <p className="text-[#C9A96E] font-body text-xs tracking-[0.4em] uppercase mb-3">Прайс-лист</p>
               <h2 className="font-display text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white">Наши услуги</h2>
             </div>
-            <p className="font-body text-white/40 text-sm leading-relaxed max-w-xs">
-              В стоимость включена бесплатная коррекция через 4–6 недель
-            </p>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-px bg-[#C9A96E]/10 mb-px">
