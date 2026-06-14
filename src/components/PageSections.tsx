@@ -11,6 +11,7 @@ const PORTRAIT_IMAGE = "https://cdn.poehali.dev/projects/5016e935-bb63-4aee-a242
 const services = [
   {
     title: "Брови",
+    seo: "Перманентный макияж бровей в Череповце",
     subtitle: "Перманентный макияж",
     items: ["Волосковая техника", "Пудровые брови", "Комбинированная техника"],
     price: "от 7 500 ₽",
@@ -18,6 +19,7 @@ const services = [
   },
   {
     title: "Губы",
+    seo: "Перманентный макияж губ в Череповце",
     subtitle: "Перманентный макияж",
     items: ["Акварельные губы", "Контур губ", "Омбре губы", "Коррекция формы"],
     price: "от 7 500 ₽",
@@ -25,6 +27,7 @@ const services = [
   },
   {
     title: "Стрелки",
+    seo: "Перманентный макияж стрелок и век в Череповце",
     subtitle: "Перманентный макияж",
     items: ["Межресничное пространство", "Классические стрелки", "Смоки", "Нижнее веко"],
     price: "от 7 000 ₽",
@@ -32,6 +35,7 @@ const services = [
   },
   {
     title: "Трихопигментация",
+    seo: "Трихопигментация и восстановление густоты волос в Череповце",
     subtitle: "SMP / Scalp Micro Pigmentation",
     items: ["Визуальное восстановление густоты волос", "Залысины", "Шрамы", "Дефекты кожи"],
     price: ["Мужчины — от 10 000 ₽", "Женщины — от 12 000 ₽"],
@@ -39,6 +43,7 @@ const services = [
   },
   {
     title: "Консультация",
+    seo: "Бесплатная консультация по перманентному макияжу в Череповце",
     subtitle: "Подбор техники",
     items: ["Анализ типажа", "Подбор формы", "Цветодиагностика", "Пробный эскиз"],
     price: "Бесплатно",
@@ -260,6 +265,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
                   <Icon name={s.icon} size={18} className="text-[#C9A96E]" />
                 </div>
                 <p className="text-[#C9A96E]/60 font-body text-xs tracking-widest uppercase mb-1">{s.subtitle}</p>
+                <h2 className="sr-only">{s.seo}</h2>
                 <h3 className="font-display text-3xl text-white mb-4">{s.title}</h3>
                 <ul className="space-y-2 mb-6">
                   {s.items.map(item => (
@@ -294,6 +300,7 @@ export function PageSections({ scrollTo, onBookingOpen }: PageSectionsProps) {
                   <Icon name={s.icon} size={18} className="text-[#C9A96E]" />
                 </div>
                 <p className="text-[#C9A96E]/60 font-body text-xs tracking-widest uppercase mb-1">{s.subtitle}</p>
+                <h2 className="sr-only">{s.seo}</h2>
                 <h3 className="font-display text-3xl text-white mb-4">{s.title}</h3>
                 <ul className="space-y-2 mb-6">
                   {s.items.map(item => (
