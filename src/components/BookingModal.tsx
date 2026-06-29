@@ -10,6 +10,7 @@ interface BookingModalProps {
 
 export function BookingModal({ isOpen, onClose }: BookingModalProps) {
   const [form, setForm] = useState({ name: "", phone: "", service: "", date: "", comment: "" });
+  const [agree, setAgree] = useState(false);
   const [submitted, setSubmitted] = useState(false);
   const [status, setStatus] = useState<"idle" | "loading" | "error">("idle");
 
@@ -125,12 +126,29 @@ export function BookingModal({ isOpen, onClose }: BookingModalProps) {
                 />
               </div>
 
+              <label className="flex items-start gap-3 cursor-pointer">
+                <input
+                  type="checkbox"
+                  required
+                  checked={agree}
+                  onChange={e => setAgree(e.target.checked)}
+                  className="mt-0.5 w-4 h-4 accent-[#C9A96E] flex-shrink-0"
+                />
+                <span className="font-body text-xs text-white/40 leading-relaxed">
+                  Я соглашаюсь с{" "}
+                  <a href="/privacy" target="_blank" rel="noopener noreferrer" className="text-[#C9A96E]/70 hover:text-[#C9A96E] underline underline-offset-2">
+                    политикой конфиденциальности
+                  </a>{" "}
+                  и обработкой персональных данных
+                </span>
+              </label>
+
               {status === "error" && (
                 <p className="text-red-400 text-xs font-body text-center">Ошибка отправки. Попробуйте ещё раз.</p>
               )}
               <button
                 type="submit"
-                disabled={status === "loading"}
+                disabled={status === "loading" || !agree}
                 className="w-full bg-[#C9A96E] text-[#0F0D0A] py-4 text-xs font-body font-semibold tracking-[0.25em] uppercase hover:bg-[#E8C98A] transition-colors mt-2 disabled:opacity-60"
               >
                 {status === "loading" ? "Отправка..." : "Отправить заявку"}
