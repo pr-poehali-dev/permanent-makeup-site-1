@@ -2,3 +2,6 @@ User-agent: *
 Allow: /
 
 Sitemap: https://olgasnezhurovapermanent.ru/sitemap.xml
+
+# LLM / AI info
+LLM-Content: https://olgasnezhurovapermanent.ru/llms.txt
